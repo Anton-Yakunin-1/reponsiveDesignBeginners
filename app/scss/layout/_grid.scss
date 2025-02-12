@@ -1,12 +1,15 @@
 @use '../util' as u;
 
+%widget {
+
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    gap: 40px;
-    // max-width: 1000px;
-    width: min(100% - 40px, 1000px);
+    gap: u.rem(40);
+    width: min(100% - u.rem(40), u.rem(1000));
     margin-inline: auto;
 
     @include u.breakpoint(large) {
@@ -17,7 +20,7 @@
 
     &__main,
     &__sidebar {
-        padding: 40px;
+        padding: u.rem(40);
     }
     
 
@@ -34,7 +37,6 @@
         }
     }
     &__sidebar {
-    background-color: hsl(300, 100%, 30%);
 
     @include u.breakpoint-down(medium) {
         text-align: center;
@@ -43,5 +45,10 @@
     @include u.breakpoint-down(small) {
         text-align: right;
         }
+    }
+
+    &__widget {
+        padding: u.rem(16);
+       
     }
 }
