@@ -1,0 +1,50 @@
+@use '../util' as u;
+
+.topnav {
+    background-color: var(--header-bg);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 20px;
+    }
+
+    &__homelink {
+        &:hover {
+            opacity: 0.9;
+        }
+
+    }
+
+    &__logo {
+        display: block;
+
+    }
+
+    &__links {
+        display: flex;
+        gap: u.rem(40);
+        margin: 0;
+        padding: 0;
+           
+    }
+
+    &__item {
+        list-style-type: none;
+    }
+
+    &__link {
+        font-size: u.rem(16);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: var(--text-light);
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+    }
+}
