@@ -18,6 +18,11 @@ body {
     background-color: var(--backgound-color);
     color: var(--text-color);
     margin-block-end: 50vh;
+
+    img {
+      display: block;
+      height: auto;
+    }
 }
 
 .visually-hidden {
