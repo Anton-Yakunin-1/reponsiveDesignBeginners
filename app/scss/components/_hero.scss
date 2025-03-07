@@ -5,14 +5,18 @@
     color: var(--text-light);
 
     &__wrapper {
-        display: flex;
-        flex-direction: column;
+        padding-block: 30px 60px;
+
+        @include u.breakpoint(large){
+            padding-block: 40px 80px;
+        }
     }
 
     &__image {
         width: 62%;
         max-width: u.rem(483);
         margin-inline: auto;
+        margin-block: u.rem(30) u.rem(40)
         // width: u.rem(200);
 
         // @include u.breakpoint(large) {
@@ -31,11 +35,5 @@
     &__content {
         font-size: u.rem(24);
     }
-
-    &__button {
-        background-color: var(--button-primary-bg);
-        color: var(--button-primary-text);
-        padding: u.rem(10);
-        border-radius: 24px;
-    }
+    
 }
