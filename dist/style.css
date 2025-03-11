@@ -19,6 +19,7 @@ body {
 }
 body img {
   display: block;
+  width: 100%;
   height: auto;
 }
 
@@ -90,10 +91,13 @@ a:active {
   --header-bg: hsl(232, 58%, 55%);
   --hero-bg: hsl(232, 58%, 55%);
   --button-primary-bg: hsl(180, 100%, 42%);
+  --button-primary-bg-hover: hsl(180, 100%, 37%);
   --button-primary-text: hsl(233, 14%, 25%);
   --button-secondary-bg: transparent;
+  --button-secondary-bg-hover: hsl(0, 0%, 100%);
   --button-secondary-border: hsl(0, 0%, 100%);
   --button-secondary-text: hsl(0, 0%, 100%);
+  --button-secondary-text-hover: var(--hero-bg);
   --fullwidth-bg: hsl(320, 85%, 41%);
 }
 
@@ -112,18 +116,30 @@ a:active {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.75rem 1rem;
+  padding: 0.625rem 0.875rem;
   border-radius: 1.5rem;
+  transition-property: background-color, border;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
 }
 .button.primary {
   background-color: var(--button-primary-bg);
   color: var(--button-primary-text);
   border: 0.125rem solid var(--button-primary-bg);
 }
+.button.primary:hover {
+  background-color: var(--button-primary-bg-hover);
+  border: 0.125rem solid var(--button-primary-bg-hover);
+}
 .button.secondary {
   background-color: var(--button-secondary-bg);
   color: var(--button-secondary-text);
   border: 0.125rem solid var(--button-secondary-border);
+}
+.button.secondary:hover {
+  background-color: var(--button-secondary-bg-hover);
+  color: var(--button-secondary-text-hover);
 }
 
 .wrapper {
@@ -194,25 +210,40 @@ a:active {
   color: var(--text-light);
 }
 .hero__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   padding-block: 30px 60px;
+  padding-block: 1.875rem 3.75rem;
 }
 @media (min-width: 56.25em) {
   .hero__wrapper {
+    flex-direction: row-reverse;
     padding-block: 40px 80px;
+    gap: 10.25%;
+  }
+}
+@media (min-width: 56.25em) {
+  .hero__wrapper {
+    flex-direction: row-reverse;
+    padding-block: 2.5rem 5rem;
   }
 }
 .hero__image {
   width: 62%;
   max-width: 30.1875rem;
-  margin-inline: auto;
-  margin-block: 1.875rem 2.5rem;
 }
-.hero__text {
-  font-family: "Source Sans 3", serif;
+@media (min-width: 56.25em) {
+  .hero__image {
+    flex: 5;
+  }
 }
-.hero__title {
-  font-size: 2.625rem;
+@media (min-width: 56.25em) {
+  .hero__text {
+    flex: 6;
+  }
 }
-.hero__content {
-  font-size: 1.5rem;
+.hero__button:first-of-type {
+  margin-inline-end: 20px;
 }/*# sourceMappingURL=style.css.map */
